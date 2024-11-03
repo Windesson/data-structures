@@ -12,8 +12,9 @@ def searchBST(self, root, val):
         return self.searchBST(root.right, val)
     elif val < root.val:
         return self.searchBST(root.left, val)
-    else:
-        return root
+
+    return root
+
 # nsert a new node as a child of the leaf.
 def insertBST(self, root, val):
     if not root:
@@ -24,8 +25,9 @@ def insertBST(self, root, val):
     # insert into the left subtree
     elif val < root.val:
         root.left =  self.insertBST(root.left, val)
-    else:
-        return root
+    
+    return root
+
 #Iteration
 def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
     node = root
