@@ -15,7 +15,7 @@ def searchBST(self, root, val):
 
     return root
 
-# nsert a new node as a child of the leaf.
+# insert a new node as a child of the leaf.
 def insertBST(self, root, val):
     if not root:
         return TreeNode(val)
