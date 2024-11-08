@@ -25,7 +25,7 @@ def rob(self, nums):
     if len(nums) < 2:
         return nums[0]
 
-    loot = [0] * len(nums)
+    loot = [[0] * len(nums)]
     loot[0] = nums[0] 
     loot[1] = max(nums[0],nums[1]) 
 
@@ -33,3 +33,18 @@ def rob(self, nums):
         loot[i] = max(nums[i] + loot[i-2], loot[i-1])
 
     return loot[-1]
+
+def rob(self, nums):
+    if len(nums) < 2:
+        return nums[0]
+
+    dp = [0,0]
+    dp[0] = nums[0] 
+    dp[1] = max(nums[0],nums[1]) 
+
+    for i in range(2, len(nums)):
+        temp = max(nums[i] + dp[0], dp[1])
+        dp[0] = dp[1]
+        dp[1] = temp
+
+    return dp[1]
