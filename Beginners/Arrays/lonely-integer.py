@@ -14,3 +14,22 @@ def lonelyinteger(a):
         if val == 1:
             return key
     return -1
+
+def lonelyintegerXOR(arr):
+    ans = 0
+    for num in arr:
+        ans = ans ^ num
+    return ans
+
+def lonelyintegerXOR2(arr):
+    arr.sort()
+    ans = 0
+    for num in arr:
+        if num == ans:
+            ans = 0
+        elif ans == 0:
+            ans = num
+    return ans
+
+print(lonelyintegerXOR([1,1,2,2,0]))
+print(lonelyintegerXOR2([1,1,2,2,0]))
